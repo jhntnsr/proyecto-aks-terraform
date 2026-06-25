@@ -31,26 +31,21 @@ Créditos de Azure (el entorno se destruye al finalizar para optimizar costos).
 Instrucciones de Despliegue
 Inicialización de Terraform:
 
-Bash
 terraform init
 Construcción de Infraestructura:
 
-Bash
 terraform apply -auto-approve
 Conexión al Clúster:
 
-Bash
 az aks get-credentials --resource-group mi-aks-recursos --name mi-cluster-aks-v2
 Despliegue de la Aplicación:
 
-Bash
 kubectl apply -f nginx-app.yaml
 Verificación:
 
-Bash
 kubectl get services --watch
+
 Limpieza (Importante)
 Para evitar cargos inesperados en tu suscripción de Azure, siempre destruye los recursos tras finalizar las pruebas:
 
-Bash
 terraform destroy -auto-approve
